@@ -1,0 +1,188 @@
+.slide {
+  position: relative;
+  background-repeat: no-repeat;
+  padding-top: 270px;
+  padding-bottom: 260px;
+  margin-left: -1px;
+  background-size: cover;
+  &::before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #00000061;
+  }
+  .year {
+    position: absolute;
+    color: $color-white;
+    margin-left: 1rem;
+    padding-left: 1rem;
+  }
+  .slide-content {
+    position: relative;
+
+    .small-tittle {
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: all 800ms ease;
+      opacity: 0;
+      color: white;
+    }
+    .big-tittle {
+      color: white;
+      font-size: 100px;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: all 1200ms ease;
+    }
+  }
+  .slide-button {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 1500ms ease;
+  }
+  .social-icons {
+    position: relative;
+    list-style: none;
+    margin-top: 3rem;
+    li {
+      margin-bottom: 1.5rem;
+      a {
+        color: $color-white;
+        text-decoration: none;
+        &:hover {
+          color: $color-usual;
+          transition: all 200ms ease;
+        }
+      }
+    }
+  }
+  .contact {
+    position: absolute;
+    color: $color-white;
+    right: 55px;
+    bottom: 83px;
+    a {
+      color: $color-white;
+      text-decoration: none;
+      &:hover {
+        color: $color-usual;
+        transition: all 200ms ease;
+      }
+    }
+  }
+  .scroll-down {
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    bottom: 20px;
+    width: 30px;
+    height: 68px;
+    cursor: pointer;
+    display: block;
+    z-index: 1;
+    cursor: pointer;
+    .chevron {
+      position: absolute;
+      width: 28px;
+      height: 8px;
+      opacity: 0;
+      transform: scale3d(0.5, 0.5, 0.5);
+      animation: move 3s ease-out infinite;
+      &:first-child {
+        animation: move 3s ease-out 1s infinite;
+      }
+      &:nth-child(2) {
+        animation: move 3s ease-out 2s infinite;
+      }
+      &::before {
+        left: 0;
+        transform: skew(0deg, 30deg);
+        content: " ";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 51%;
+        background: #ffe1a0;
+      }
+      &::after {
+        right: 0;
+        width: 50%;
+        transform: skew(0deg, -30deg);
+        content: " ";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 51%;
+        background: #ffe1a0;
+      }
+    }
+  }
+}
+
+.head-slider .owl-dots {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 50%;
+  right: 80px;
+  top: 300px;
+  .owl-dot {
+    margin-bottom: 1.3rem;
+    transition: all 300ms ease;
+    span {
+      width: 14px !important;
+      height: 14px !important;
+      background-color: rgba(255, 255, 255, 0.35) !important;
+      &:hover {
+        background-color: #ffffff !important;
+        transition: all 200ms ease;
+      }
+    }
+  }
+  .owl-dot.active {
+    span {
+      background-color: #ffffff !important;
+    }
+  }
+}
+
+.owl-item.active {
+  .slide-content {
+    .small-tittle {
+      transform: scale(1);
+      opacity: 1;
+      transition-delay: 0.2s;
+    }
+    .big-tittle {
+      transform: scale(1);
+      opacity: 1;
+      transition-delay: 0.4s;
+    }
+  }
+  .slide-button {
+    transform: scale(1);
+    opacity: 1;
+    transition-delay: 0.6s;
+  }
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}

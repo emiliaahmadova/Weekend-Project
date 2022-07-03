@@ -1,0 +1,30 @@
+.about-content {
+  padding: 15px;
+  padding-right: 0;
+  a {
+    text-decoration: none;
+  }
+  .about-second-title {
+    font-size: 44px;
+    font-weight: 400;
+  }
+  .about-main-text {
+    font-size: 15px;
+    font-weight: 400;
+    color: $color-text-gray;
+  }
+}
+.about-img {
+  position: relative;
+  &::before {
+    content: url(/assets/img/Little-green-circle.png);
+    position: absolute;
+    left: -111px;
+    top: 50px;
+    z-index: -1;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

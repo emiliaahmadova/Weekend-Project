@@ -1,0 +1,41 @@
+.block-scroll {
+  overflow: hidden;
+  position: relative;
+  body {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .header-mobile {
+    transform: translate(0) !important;
+    visibility: visible !important;
+    transition: 0.6s;
+    transform-origin: right;
+    .overlay-menu {
+      transform: translate(0) !important;
+      opacity: 1 !important;
+    }
+  }
+}
+
+.first-title {
+  font-weight: 400;
+  color: $color-text-gray;
+}
+.second-title {
+  font-weight: 400;
+}
+.bg-gray {
+  background-color: $color-bg-gray;
+}
+.centered-padding {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+.mw-1200 {
+  max-width: 1200px;
+}
+
+button:focus {
+  outline: 0;
+}

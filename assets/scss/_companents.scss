@@ -1,0 +1,126 @@
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  padding-top: 0;
+  transition: all 550ms ease;
+  .header-big-monitor {
+    padding: 10px 0;
+    margin: 0;
+    transition: 1s;
+    .items {
+      align-items: center;
+
+      li.dropdown {
+        a:not(.dropdown-link) {
+          padding-bottom: 33px;
+          &::after {
+            bottom: 55px !important;
+          }
+        }
+      }
+      li {
+        a::after {
+          bottom: 20px !important;
+        }
+      }
+      .dropdown {
+        padding-bottom: 15px !important;
+        .dropdown-content {
+          top: 68px;
+        }
+      }
+    }
+  }
+}
+.btn-outline {
+  color: $color-black;
+  background-color: $color-white;
+  padding: 15px 40px;
+  font-size: 14px;
+  border: 1px solid #969696;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 600ms ease-in-out;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  &:hover {
+    color: black;
+    border: 1px solid $color-usual;
+    &::after {
+      width: 100%;
+      opacity: 1;
+      left: 0;
+    }
+  }
+  &::after {
+    content: " ";
+    background-color: $color-usual;
+    left: 50%;
+    right: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transition: 600ms ease;
+    z-index: -1;
+    opacity: 0;
+  }
+}
+.btn-usual {
+  color: $color-black;
+  background-color: $color-usual;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 150ms ease-in-out;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
+  &:hover {
+    color: $color-white;
+    &::after {
+      width: 100%;
+      opacity: 1;
+      left: 0;
+    }
+  }
+  &::after {
+    content: " ";
+    background-color: $color-black;
+    left: 50%;
+    right: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transition: 400ms ease;
+    z-index: -1;
+    opacity: 0;
+  }
+}
+.scroll-up {
+  position: fixed;
+  right: 15px;
+  bottom: 86px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  background: black;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  display: none;
+  z-index: 20;
+  color: #ffffff;
+  &:hover {
+    background: $color-usual;
+    transition: all 300ms ease;
+  }
+}
